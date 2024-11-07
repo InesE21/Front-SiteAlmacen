@@ -1,0 +1,81 @@
+<p-card header="Crear Clientes"  [style]="{ width: '100%' }">
+  <ng-template pTemplate="header">
+
+  </ng-template>
+  <div>
+    <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()" class="p-3 bg-faded">
+
+
+      <div class="grid">
+        <div class="col-12 sm:col-6">
+            <div class="p-inputgroup mb-1">
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                <input class="w-12" type="text" pInputText formControlName="nombre" placeholder="Nombre Del Cliente"  title="Nombre Cliente">         
+            </div>
+        </div>
+
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-1 ">
+                <span class="p-inputgroup-addon"><i class="pi pi-wallet"></i></span>
+                <input class="w-12" type="text" pInputText formControlName="direccion" placeholder="Direccion Del Cliente" title="direccion Cliente" >          
+          </div>
+        </div>
+
+      </div>
+
+      <div class="grid">
+        <div class="col-12 sm:col-6">
+            <div class="p-inputgroup mb-1">
+                <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+                <input class="w-12" type="text" pInputText formControlName="telefono" placeholder="Telefono Del Cliente"  title="telefono Cliente">         
+            </div>
+        </div>
+
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-1 ">
+                <span class="p-inputgroup-addon"><i class="pi pi-bookmark"></i></span>
+                <input class="w-12" type="email" pInputText formControlName="correo" placeholder="Correo Del Cliente" title="correo Cliente" >          
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-1 ">
+            <span class="p-inputgroup-addon"><i class="pi pi-comments"></i></span>
+            <input class="w-12" type="password" pInputText formControlName="password" placeholder="Password del Cliente" title="password Cliente" >          
+        </div>
+        </div>
+      </div>
+
+      <div class="flex justify-content-center flex-wrap">
+        <button 
+                    pButton 
+                    pRipple
+                    label="Guardar"
+                    icon="pi pi-save"
+                    severity="info"
+                    class="mr-4"
+                    type="submit"
+        ></button>
+
+        <button 
+                    pButton 
+                    pRipple
+                    label="Cancelar"
+                    icon="pi pi-times-circle"
+                    severity="warning"
+                    class="mr-4"
+                    type="button"
+                    (click)="cancel()"
+        ></button>
+      </div>
+
+
+  </form> 
+
+  </div>
+  <ng-template pTemplate="footer">
+
+  </ng-template>
+</p-card>

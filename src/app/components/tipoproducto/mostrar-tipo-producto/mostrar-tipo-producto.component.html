@@ -1,0 +1,44 @@
+<p-card class="w-12 h-full">
+  <ng-template pTemplate="header">
+      <div class="flex justify-content-between flex-wrap">
+          <h3 class="ml-4">
+              Registro de Tipos de Productos
+          </h3>
+          <div class="mt-2 mr-2">
+              <a 
+                pButton 
+                pRipple
+                label="Crear Tipo de Producto" 
+                icon="pi pi-plus"
+                class="bg-cyan-600"
+                [routerLink]="['/tipoproductos/nuevo']">
+              </a>
+          </div>
+      </div>
+  </ng-template>
+  <p>
+      <p-table [value]="tiposProductos">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>Nombre</th>
+                  <th class="flex justify-content-center flex-wrap">Acciones</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-tipoProducto>
+              <tr>
+                  <td>{{ tipoProducto.nombre }}</td>
+                  <td>
+                      <a 
+                          pButton 
+                          pRipple
+                          icon="pi pi-pencil"
+                          severity="warning"
+                          class="mr-1"
+                          [routerLink]="['/tipoproductos/edit', tipoProducto.id]">
+                      </a>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+  </p>
+</p-card>

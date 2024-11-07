@@ -1,0 +1,48 @@
+<p-card header="Actualizar Tipo de Producto" [style]="{ width: '100%' }">
+  <div>
+    <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()" class="p-3 bg-faded">
+
+      <div class="grid">
+        <div class="col-12">
+          <div class="p-inputgroup mb-1">
+            <span class="p-inputgroup-addon"><i class="pi pi-tag"></i></span>
+            <input class="w-12" type="text" pInputText formControlName="id" placeholder="ID del Tipo de Producto" title="ID del Tipo de Producto" readonly>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-12">
+          <div class="p-inputgroup mb-1">
+            <span class="p-inputgroup-addon"><i class="pi pi-tag"></i></span>
+            <input class="w-12" type="text" pInputText formControlName="nombre" placeholder="Nombre del Tipo de Producto" title="Nombre del Tipo de Producto">
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-content-center flex-wrap">
+        <button 
+          pButton 
+          pRipple
+          label="Actualizar"
+          icon="pi pi-save"
+          severity="info"
+          class="mr-4"
+          type="submit"
+        ></button>
+
+        <button 
+          pButton 
+          pRipple
+          label="Cancelar"
+          icon="pi pi-times-circle"
+          severity="warning"
+          class="mr-4"
+          type="button"
+          (click)="cancel()"
+        ></button>
+      </div>
+
+    </form> 
+  </div>
+</p-card>

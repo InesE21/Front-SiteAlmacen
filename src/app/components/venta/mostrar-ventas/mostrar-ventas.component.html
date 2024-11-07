@@ -1,0 +1,37 @@
+<p-card header="Lista de Ventas" [style]="{ width: '100%' }">
+    <div class="p-card-content">
+      <p-table [value]="ventas" [paginator]="true" [rows]="10" [columns]="cols">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Fecha</th>
+            <th>Descuento</th>
+            <th>Subtotal</th>
+            <th>Total</th>
+            <th>Cliente</th>
+            <th>Acciones</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-venta>
+          <tr>
+            <td>{{ venta.fecha | date }}</td>
+            <td>{{ venta.descuento | currency }}</td>
+            <td>{{ venta.subtotal | currency }}</td>
+            <td>{{ venta.total | currency }}</td>
+            <td>{{ venta.cliente.nombreCliente }}</td>
+            <td>
+              <button 
+                pButton 
+                icon="pi pi-trash" 
+                (click)="eliminarVenta(venta.id)"
+                label="Eliminar"
+                severity="danger"
+              ></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+    <ng-template pTemplate="footer">
+    </ng-template>
+  </p-card>
+  

@@ -1,0 +1,32 @@
+<p-card class="w-12 h-full">
+    <ng-template pTemplate="header">
+
+    </ng-template>
+
+
+    <p-table [value]="consulta1">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nombre</th>
+                <th>marca</th>
+                <th>precio</th>
+                <th>stockmin</th>
+                <th>cantidad</th>
+                <th>tipoproducto</th>
+                
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-consulta1>
+            <tr>
+                <td>{{ consulta1.nombre }}</td>
+                <td>{{ consulta1.marca }}</td>
+                <td>{{ consulta1.precio }}</td>
+                <td>{{ consulta1.stockmin }}</td>
+                <td>{{ consulta1.cantidad }}</td>
+                <td>{{ consulta1.tipoproducto.nombre }}</td>
+                
+
+            </tr>
+        </ng-template>
+    </p-table>
+</p-card>

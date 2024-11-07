@@ -1,0 +1,78 @@
+<p-card header="Crear Productos" [style]="{ width: '100%' }">
+  <div>
+    <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()" class="p-3 bg-faded">
+
+      <div class="grid">
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-1">
+            <span class="p-inputgroup-addon"><i class="pi pi-tag"></i></span>
+            <input class="w-12" type="text" pInputText formControlName="nombre" placeholder="Nombre del Producto" title="Nombre del Producto">
+          </div>
+        </div>
+
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-1">
+            <span class="p-inputgroup-addon"><i class="pi pi-box"></i></span>
+            <input class="w-12" type="text" pInputText formControlName="marca" placeholder="Marca del Producto" title="Marca del Producto">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-1">
+            <span class="p-inputgroup-addon"><i class="pi pi-dollar"></i></span>
+            <input class="w-12" type="number" pInputText formControlName="precio" placeholder="Precio" title="Precio">
+          </div>
+        </div>
+
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-1">
+            <span class="p-inputgroup-addon"><i class="pi pi-briefcase"></i></span>
+            <input class="w-12" type="number" pInputText formControlName="stockmin" placeholder="Stock Mínimo" title="Stock Mínimo">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-1">
+            <span class="p-inputgroup-addon"><i class="pi pi-shopping-cart"></i></span>
+            <input class="w-12" type="number" pInputText formControlName="cantidad" placeholder="Cantidad" title="Cantidad">
+          </div>
+        </div>
+
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-1">
+            <span class="p-inputgroup-addon"><i class="pi pi-tag"></i></span>
+            <input class="w-12" type="number" pInputText formControlName="tipoproducto" placeholder="Tipo de Producto" title="Tipo de Producto">
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-content-center flex-wrap">
+        <button 
+          pButton 
+          pRipple
+          label="Guardar"
+          icon="pi pi-save"
+          severity="info"
+          class="mr-4"
+          type="submit"
+        ></button>
+
+        <button 
+          pButton 
+          pRipple
+          label="Cancelar"
+          icon="pi pi-times-circle"
+          severity="warning"
+          class="mr-4"
+          type="button"
+          (click)="cancel()"
+        ></button>
+      </div>
+
+    </form> 
+  </div>
+</p-card>

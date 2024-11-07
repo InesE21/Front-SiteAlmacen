@@ -1,0 +1,73 @@
+<p-card class="w-12 h-full">
+    <ng-template pTemplate="header">
+
+        <div class="flex justify-content-between flex-wrap">
+            <h3 class="ml-4">
+                Registro de Clientes
+            </h3>
+            <div class="mt-2 mr-2">
+                <a 
+                  pButton 
+                  pRipple
+                  label="Crear Clientes" 
+                  icon="pi pi-user-plus"
+                  class="bg-cyan-600"
+                  [routerLink]="['/clientes/nuevo']">
+                </a>
+
+
+            </div>
+
+        </div>
+    </ng-template>
+    <p>
+        <p-table [value]="clientes">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th class="flex justify-content-center flex-wrap">Acciones</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-clientes>
+                <tr>
+                    <td>{{ clientes.nombreCliente }}</td>
+                    <td>{{ clientes.direccionCliente }}</td>
+                    <td>{{ clientes.telefonoCliente }}</td>
+                    <td>{{ clientes.correoCliente }}</td>
+                    <td>
+                        <button 
+                        pButton 
+                            pRipple
+                            icon="pi pi-print"
+                            class="bg-cyan-600  mr-1"
+                        >
+
+                        </button>
+                        <a 
+                            pButton 
+                            pRipple
+                            icon="pi pi-sync"
+                            severity="warning"
+                            class="mr-1"
+                            [routerLink]="['/clientes/edit', clientes.id]">
+                        </a>
+
+                        <button 
+                            pButton 
+                            pRipple
+                            severity="danger"
+                            icon="pi pi-eraser"
+                            class="mr-1"
+                            (click)="eliminar(clientes.id)"
+                        >
+
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p>
+</p-card>
